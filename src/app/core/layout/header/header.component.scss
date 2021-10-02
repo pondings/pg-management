@@ -1,0 +1,27 @@
+app-header {
+    div.pg-header {
+        height: 60px;
+        max-height: 60px;
+        min-height: 60px;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+
+        background-color: aqua;
+
+        div.header-title {
+            width: 30%;
+            min-width: 30%;
+            max-width: 30%;
+
+            height: 100%;
+            max-height: 100%;
+            min-height: 100%;
+
+            div {
+                padding: 8px;
+            }
+        }
+    }
+}

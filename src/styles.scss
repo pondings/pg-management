@@ -1,4 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+$percent: '%';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@mixin percent-x($unit, $fullUnitName) {
+  @for $i from 1 through 100 {
+    .#{$unit}-#{$i}-p {
+      #{$fullUnitName}: #{$i}#{$percent};
+      max-#{$fullUnitName}: #{$i}#{$percent};
+      min-#{$fullUnitName}: #{$i}#{$percent};
+    }
+  }
+}
+
+@mixin pixel-x($unit, $fullUnitName) {
+  @for $i from 1 through 1000 {
+    .#{$unit}-#{$i}-px {
+      #{$fullUnitName}: #{$i}px;
+      max-#{$fullUnitName}: #{$i}px;
+      min-#{$fullUnitName}: #{$i}px;
+    }
+  }
+}
+
+@mixin padding-x($unit, $fullUnitName) {
+  @for $i from 1 through 100 {
+    .#{$unit}-#{$i} {
+      #{$fullUnitName}: #{$i}px;
+      max-#{$fullUnitName}: #{$i}px;
+      min-#{$fullUnitName}: #{$i}px;
+    }
+  }
+}
+
+@include percent-x('h', 'height');
+@include percent-x('w', 'width');
+@include pixel-x('h', 'height');
+@include pixel-x('w', 'width');
+@include padding-x('p', 'padding');
